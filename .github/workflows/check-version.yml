@@ -1,0 +1,27 @@
+name: Check Version
+on:
+  schedule:
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+      - name: Fetch release version
+        run: |
+          curl -sL https://api.github.com/repos/Anuken/Mindustry/releases | \
+          jq -r ".[0].tag_name" > version-check/latest.txt
+      - name: Check for modified files
+        id: git-check
+        run: echo ::set-output name=modified::$([ -z "`git status --porcelain`" ] && echo "false" || echo "true")
+      - name: Commit latest release version
+        if: steps.git-check.outputs.modified == 'true'
+        run: |
+          git config --global user.email "29306733+oldshensheep@users.noreply.github.com "
+          git config --global user.name "oldshensheep"
+          git commit -am "New release version"
+          git push
