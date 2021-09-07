@@ -1,4 +1,4 @@
-name: Update All Build
+name: Build Image And Push To DockerHub
 
 on:
   workflow_dispatch:
@@ -19,4 +19,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
-        run: ./build.sh
+        run: python3 rebuild_all.py
