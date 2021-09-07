@@ -6,7 +6,7 @@ realeases = requests.get(
 for index, realease in enumerate(realeases[::-1]):
     tag_name = realease["tag_name"]
     ext_tag = '\\'
-    if index == 0:
+    if index == len(realeases)-1:
         ext_tag += "-t oldshensheep/mindustry-server:latest \\"
     if realease['prerelease'] == False:
         ext_tag += "-t oldshensheep/mindustry-server:stable \\"
