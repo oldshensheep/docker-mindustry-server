@@ -15,6 +15,6 @@ for index, realease in enumerate(realeases[::-1]):
     --push \\
     --platform linux/arm,linux/arm64,linux/amd64 \\
     -t oldshensheep/mindustry-server:{tag_name} \\
-    {ext_tag} 
+    {ext_tag} \\
     --build-arg "tag_name"="{tag_name}" .
     ''')
