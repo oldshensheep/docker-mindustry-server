@@ -1,4 +1,4 @@
-name: Build Image And Push To DockerHub
+name: Rebuild All Image And Push To DockerHub
 
 on:
   workflow_dispatch:
