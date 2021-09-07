@@ -17,4 +17,4 @@ for index, realease in enumerate(realeases[::-1]):
     -t oldshensheep/mindustry-server:{tag_name} \\
     {ext_tag} 
     --build-arg "tag_name"="{tag_name}" .
-    ''')
+    ''', shell=True)
