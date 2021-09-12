@@ -22,6 +22,6 @@ EXPOSE 6859
 
 CMD \
     cd /opt/mindustry && \
-    su -s '/bin/sh' sheep -c "/usr/bin/java -jar /opt/mindustry/server-release.jar"
+    java -jar /opt/mindustry/server-release.jar
 
 USER sheep:sheep
