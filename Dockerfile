@@ -12,16 +12,15 @@ RUN \
     useradd -u 999 -U -s /bin/false sheep && \
     groupmod -o -g 1000 sheep && \
     usermod -G sheep sheep && \
-    chown sheep:sheep -R /opt/mindustry && \
+    chown sheep:sheep -R /opt/mindustry/config && \
     wget https://github.com/Anuken/Mindustry/releases/download/${tag_name}/server-release.jar -O /opt/mindustry/server-release.jar
+
+
+COPY docker-entrypoint.sh /
 
 VOLUME /opt/mindustry/config
 
 EXPOSE 6567
 EXPOSE 6859
 
-CMD \
-    cd /opt/mindustry && \
-    java -jar /opt/mindustry/server-release.jar
-
-USER sheep:sheep
+ENTRYPOINT ["/docker-entrypoint.sh"]
