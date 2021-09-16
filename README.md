@@ -16,5 +16,5 @@ sudo docker run  -it \
 ```
 ### I want specific verion
 You can replace `oldshensheep/mindustry-server:latest` with `oldshensheep/mindustry-server:v130.1` etc.  
-where dose it come from? https://github.com/Anuken/Mindustry/tags  
-the `latest` is always the latest as anuken's Mindustry version.
+where dose the `v130.1` come from? https://github.com/Anuken/Mindustry/tags  
+the `latest` is always the latest as anuken's Mindustry version. `stable` is stable version.
