@@ -1,5 +1,5 @@
 # Docker image for mindustry server 
-Docker hub https://hub.docker.com/repository/docker/oldshensheep/mindustry-server  
+Docker hub https://hub.docker.com/r/oldshensheep/mindustry-server  
 you can see all realeases there.  
 What is Mindustry?  
 A sandbox tower defense game. see https://github.com/Anuken/Mindustry
