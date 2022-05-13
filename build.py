@@ -15,8 +15,8 @@ subprocess.call(f'''
 docker buildx build \\
 --push \\
 --platform linux/arm,linux/arm64,linux/amd64 \\
--t oldshensheep/mindustry-server:{tag_name} \\
--t oldshensheep/mindustry-server:latest \\
+-t oldshensheep/docker-mindustry-server :{tag_name} \\
+-t oldshensheep/docker-mindustry-server :latest \\
 {ext_tag}
 --build-arg "tag_name"="{tag_name}" .
 ''', shell=True)
