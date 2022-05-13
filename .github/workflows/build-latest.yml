@@ -1,4 +1,4 @@
-name: Build Image And Push To DockerHub
+name: Build Image And Push To DockerHub and ghcr
 
 on:
   push:
@@ -28,4 +28,4 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push
-        run: python3 build.py
+        run: python3 build_latest.py
